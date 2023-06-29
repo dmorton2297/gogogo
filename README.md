@@ -1,9 +1,9 @@
-<div style="display:flex;justify-content:center">
-  <div>
+<p align="center">
+  <p align="center">
     <img src="https://upload.wikimedia.org/wikipedia/en/b/b6/Dramatic_Chipmunk.png" />
     <strong><p style="text-align: center">WHO GOES THERE</p></strong>
-  </div>
-</div>
+  </p>
+</p>
 
 
 ---
