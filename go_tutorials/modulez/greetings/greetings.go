@@ -6,6 +6,8 @@ import (
     "math/rand"
 )
 
+// Notive the upper case functions to indicate
+// that these should be exported
 // Hello returns a greeting for the named person.
 func Hello(name string) (string, error) {
     // If no name was given, return an error with a message.
