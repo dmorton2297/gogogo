@@ -1,7 +1,7 @@
 <p align="center">
   <p align="center">
     <img src="https://upload.wikimedia.org/wikipedia/en/b/b6/Dramatic_Chipmunk.png" />
-    <strong><p style="text-align: center">WHO GOES THERE</p></strong>
+    <strong><p style="text-align: center">WHO GO THERE</p></strong>
   </p>
 </p>
 
