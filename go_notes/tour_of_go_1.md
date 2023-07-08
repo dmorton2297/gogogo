@@ -1,3 +1,5 @@
+Created June 29 2023
+
 Based on https://go.dev/tour/list
 
 Intention: Gain some more familiarity with Go
