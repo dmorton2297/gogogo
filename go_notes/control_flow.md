@@ -1,6 +1,8 @@
 Created: July 7 2023
 Intention: More lanugage familiarity
 
+Stretch for next time: https://projecteuler.net/problem=11
+
 ## Review of what I did last time
 1. The last time I picked looked into some core elements of the language
 2. For loop syntax `for i := 0; i < 10; i ++ {}`
