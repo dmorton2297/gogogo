@@ -8,7 +8,7 @@ Stretch for next time: https://projecteuler.net/problem=11
 2. For loop syntax `for i := 0; i < 10; i ++ {}`
     a. we are implicitly declaring and initializing i
     b. i implicitly is a `var` in Go
-    c. `i := 1 == var i int = 1`
+    c. `i := 1 == var i int = 1`https://projecteuler.net/problem=11https://projecteuler.net/problem=11
     d. `const i int = 1`
 3. Short declaration can only be used within functions
 

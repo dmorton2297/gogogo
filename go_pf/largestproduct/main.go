@@ -12,9 +12,12 @@ func strToFoat64Slice(input string) []float64 {
   var output []float64
   for i:=0; i < len(input); i++ {
     char := string([]rune(input)[i])
-    parsed, err := strconv.ParseFloat(char, 8)
-    if (err == nil) {
+    if parsed, err := strconv.ParseFloat(char, 8); err == nil {
       output = append(output, parsed)
+    } else {
+      fmt.Println(
+        fmt.Sprintf("PARSING ERROR: unable to parse '%s' as a float", char),
+      )
     }
   }
   return output
@@ -38,9 +41,7 @@ func findLargestAdjacentProductInSeries(values []float64, adjacentCount int) flo
   }
   for i:= adjacentCount; i < len(values); i++ {
       vals := values[i-adjacentCount:i]
-      fmt.Println(vals)
-      product := findProductOfArray(vals)
-      if product > largestProduct {
+      if product := findProductOfArray(vals); product > largestProduct {
         largestProduct = product
       }
   }
@@ -51,7 +52,10 @@ func findLargestAdjacentProductInSeries(values []float64, adjacentCount int) flo
 
 func main() {
   var TEST_VALUES []float64 = strToFoat64Slice(INPUT_FROM_EULER)
-  fmt.Println(strconv.FormatFloat(findLargestAdjacentProductInSeries(TEST_VALUES, 13), 'f', -1, 64))
+  result := findLargestAdjacentProductInSeries(TEST_VALUES, 13)
+  fmt.Println(
+    strconv.FormatFloat(result, 'f', -1, 64),
+  )
 }
 
 
