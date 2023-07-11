@@ -1,4 +1,6 @@
 Created: July 7 2023
+Updated: July 10 2023 (added info about range)
+
 Intention: More lanugage familiarity
 
 Stretch for next time: https://projecteuler.net/problem=11
@@ -57,6 +59,14 @@ func main() {
 ```go
 for {...}
 
+```
+3. Loop with range
+```go
+for i := range someSlice {}
+```
+or 
+```go
+for i, itr := range someSlice {}
 ```
 
 ## If statements with 'short' conditions

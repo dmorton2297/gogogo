@@ -32,15 +32,26 @@ func GetBytesFromFile(path string) ([]byte, error) {
   return dat, nil
 }
 
+// I like the idea of explicitly returing pointers
+// so that you are inheratly able to return a nil
+// pointer.
+// I don't think this is very idomatic go however
+// from what I have seen before.
+// In this case it also makes sense to have concepts
+// of pointers, as the type is recursive in nature
 func generateTree(data []TreeNodeInput) *TreeNode {
-  nodes := []TreeNode{}
-  for i := 0; i < len(data); i++ {
-    itr := data[i]
-    currNode := TreeNode{ id: itr.Id, leftId: itr.Left, rightId: itr.Right, Value: itr.Value }
-    nodes = append(nodes, currNode)
+  nodes := make([]TreeNode, len(data)) // create memory for pointers
+  for i, itr := range data {
+    currNode := TreeNode{
+      id: itr.Id,
+      leftId: itr.Left,
+      rightId: itr.Right,
+      Value: itr.Value,
+    }
+    nodes[i] = currNode
   }
-  for i:= 0; i < len(nodes); i++ {
-    for j := 0; j < len(nodes); j++ {
+  for i := range nodes {
+    for j := range nodes {
       if nodes[j].id == nodes[i].leftId {
         nodes[i].Left = &nodes[j]
       }

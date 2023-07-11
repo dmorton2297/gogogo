@@ -113,3 +113,63 @@ what they return. See more https://go.dev/tour/basics/7
 
 
 Excercise today: Wrote a bubble sort
+
+
+
+--- 
+updates
+
+## Functions as values
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+// Sick!
+// This enables doing a composition pattern when developing
+func compute(fn func(float64, float64) float64) float64 {
+	return fn(3, 4)
+}
+
+func main() {
+    // Code taken from https://go.dev/tour/moretypes/24
+	hypot := func(x, y float64) float64 {
+		return math.Sqrt(x*x + y*y)
+	}
+	fmt.Println(hypot(5, 12))
+
+	fmt.Println(compute(hypot))
+	fmt.Println(compute(math.Pow))
+}
+
+```
+
+## Returning functions from functions (closures)
+```go
+package main
+
+import "fmt"
+
+func adder() func(int) int {
+	sum := 0
+    // This remind me alot
+    // of hooks that return something
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+func main() {
+	pos, neg := adder(), adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(
+			pos(i),
+			neg(-2*i),
+		)
+	}
+}
+```
